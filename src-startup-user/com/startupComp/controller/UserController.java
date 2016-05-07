@@ -23,7 +23,6 @@ public class UserController{
 		UserStartupExample userStartupExample=new UserStartupExample();
 		userStartupExample.createCriteria().andUserIdEqualTo(Integer.parseInt(userId));
 		pageRequest.setCondition(userStartupExample);
-		System.out.println("end==================>");
 		return userService.query(pageRequest);
 	}
 	
