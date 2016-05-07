@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC 
+	"-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" 
+	"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry location="D:\mysql-connector-java-5.1.7-bin.jar"/>
+	<context id="CCB_TABLES">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/o2o?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull" 
+			userId="root"
+			password="root" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false"/>
+		</javaTypeResolver>
+		
+		<javaModelGenerator targetPackage="com.startupComp.model"
+			targetProject="startupComp/src-startup-user" />
+			
+		<!-- MAPPER配置文件-->	
+		<sqlMapGenerator targetPackage="com.startupComp.mapper"
+			targetProject="startupComp/src-startup-user" />
+			
+		<!-- Client-Interface -->
+		<javaClientGenerator targetPackage="com.startupComp.client"
+			targetProject="startupComp/src-startup-user" type="XMLMAPPER" />
+		
+		<table tableName="startupComp_user" domainObjectName="UserStartup" 
+			enableCountByExample="true" enableDeleteByExample="true" enableDeleteByPrimaryKey="true" 
+			enableSelectByExample="true" enableSelectByPrimaryKey="true" enableInsert="true"
+			enableUpdateByExample="false" enableUpdateByPrimaryKey="true">
+			<generatedKey column="USER_ID" sqlStatement="mysql" identity="true" />
+		</table>
+	</context>
+</generatorConfiguration>
