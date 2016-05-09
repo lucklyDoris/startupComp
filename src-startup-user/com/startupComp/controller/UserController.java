@@ -26,4 +26,9 @@ public class UserController{
 		return userService.query(pageRequest);
 	}
 	
+	@RequestMapping(value="/returnIndex",method={RequestMethod.GET,RequestMethod.POST})
+	public String returnIndex(){
+		return "/index";
+	}
+	
 }
