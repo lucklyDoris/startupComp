@@ -1,12 +1,8 @@
 package base.startupComp.model;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.support.PropertiesLoaderUtils;
-
-import java.io.IOException;
 import java.util.Properties;
+
+import org.apache.commons.lang.StringUtils;
 
 public class OptResult {
 	/**
@@ -33,23 +29,6 @@ public class OptResult {
      * 错误码
      */
     private static Properties errorCodes;
-    /**
-     * Logger
-     */
-    private static Logger logger = Logger.getLogger(OptResult.class);
-
-    /**
-     * 初始化错误码
-     */
-    static {
-        try {
-            logger.debug("从类路径加载[error-code.properties]文件...");
-            errorCodes = PropertiesLoaderUtils.loadProperties(new ClassPathResource("error-code.properties"));
-            logger.info("加载错误码文件成功！");
-        } catch (IOException ex) {
-            logger.error("从资源文件[error-code.properties]加载错误码文件错误!", ex);
-        }
-    }
 
     /**
      * 默认构造
